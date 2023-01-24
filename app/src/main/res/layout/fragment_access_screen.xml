@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueBackgroundApp"
+    tools:context=".Presentation.login.AccessScreenFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_circle_initial_screen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.35"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_background_first_screen"
+        tools:ignore="ImageContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_coins_initial_screen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_circle_initial_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/image_circle_initial_screen"
+        app:srcCompat="@drawable/imageview_onboarding" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_easy_way_title_initial_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sora_bold"
+        android:text="@string/easy_way_to_track_your_crypto"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_coins_initial_screen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_now_you_can_description_initial_screen"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sora"
+        android:text="@string/now_you_can_follow_and_receive_the_main_updates_about_the_world_of_cryptos"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/text_easy_way_title_initial_screen"
+        app:layout_constraintTop_toBottomOf="@+id/text_easy_way_title_initial_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_login_initial_screen"
+        style="@style/Theme.CryptoButton"
+        android:layout_width="293dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/string_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_now_you_can_description_initial_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_sign_up_initial_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/string_sign_up"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login_initial_screen" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragments_home_navigation"
+    app:startDestination="@id/fragment_Home_Screen">
+
+    <fragment
+        android:id="@+id/fragment_Home_Screen"
+        android:name="com.example.Presentation.home.HomeScreenFragment"
+        android:label="fragment__home__screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_fragment_Home_Screen_to_initialScreenFragment"
+            app:destination="@id/initialScreenFragment" />
+        <action
+            android:id="@+id/action_fragment_Home_Screen_to_coinDetails"
+            app:destination="@id/coinDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/initialScreenFragment"
+        android:name="com.example.Presentation.login.AccessScreenFragment"
+        android:label="fragment_first_screen"
+        tools:layout="@layout/fragment_access_screen" />
+    <fragment
+        android:id="@+id/coinDetails"
+        android:name="com.example.CoinDetails"
+        android:label="fragment_coin_details"
+        tools:layout="@layout/fragment_coin_details" >
+        <action
+            android:id="@+id/action_coinDetails_to_fragment_Home_Screen"
+            app:destination="@id/fragment_Home_Screen" />
+    </fragment>
+</navigation>

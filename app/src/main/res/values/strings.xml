@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CryptoDaily</string>
+    <string name="now_you_can_follow_and_receive_the_main_updates_about_the_world_of_cryptos">Now you can follow and receive the main updates about the world of cryptos</string>
+    <string name="easy_way_to_track_your_crypto">Easy way to track your crypto</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_login">Login</string>
+    <string name="string_sign_up">Sign up</string>
+    <string name="create_account">Create account</string>
+    <string name="alredy_registered_click_here">Alredy registered? Click here</string>
+    <string name="exit_dialog_alert_button">Exit</string>
+    <string name="cancel_dialog_alert_button">Cancel</string>
+    <string name="are_you_sure_you_want_to_exit_text_view_dialog_alert">Are you sure you want to exit?</string>
+    <string name="exit_dialog_alert_text_view">Exit</string>
+    <string name="back_button_home_screen_string">Back</string>
+    <string name="text_view_team_details_screen">Team</string>
+    <string name="emoji">Welcome back! &#x270C;</string>
+</resources>

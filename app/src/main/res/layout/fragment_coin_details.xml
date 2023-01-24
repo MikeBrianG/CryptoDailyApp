@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_color_background"
+    tools:context=".Presentation.CoinDetails"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_button_details_home_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:background="#0000"
+        android:fontFamily="@font/poppins"
+        android:text="@string/back_button_home_screen_string"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_details"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_details"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="NameCoin" />
+
+    <TextView
+        android:id="@+id/text_view_description_detail_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_blue_text_crypto_bank"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins"
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        tools:text="Descricao sobre o bitcoin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor ligula ac eros malesuada scelerisque. Vivamus tellus ligula, dignissim sit amet enim sed, mattis efficitur tellus. Etiam est libero, mollis vitae purus ac, accumsan congue orci. Cras non justo quis ipsum tempor pulvinar vel ut eros. In fermentum sem magna, sit amet pulvinar lectus rhoncus ut. Cras nec diam scelerisque odio euismod vestibulum. Phasellus feugiat justo vel molestie dapibus. Donec sit amet sem consequat libero porttitor tincidunt. Etiam volutpat consequat convallis. Nulla arcu dui, fermentum ac elementum quis, vestibulum vitae lectus. Vestibulum efficitur vehicula mi, eu vulputate dolor sollicitudin non. Vestibulum ullamcorper pharetra pulvinar. Nulla ultrices, dui sed interdum lacinia, ante nibh porta justo, quis mollis erat odio in mauris."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_details" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="Tags"
+        android:textColor="@color/dark_blue_text_crypto_bank"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_description_detail_screen" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_tags_details_screen"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        tools:listitem="@layout/tag_details_screen_recycler_item"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/text_view_team_details_screen"
+        android:textColor="@color/dark_blue_text_crypto_bank"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_tags_details_screen" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/team_details_screen_item"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

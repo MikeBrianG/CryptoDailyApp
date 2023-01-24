@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/blueBackgroundApp"
+    tools:context="com.example.Presentation.login.LoginScreenFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/circle_background_login_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-236dp"
+        android:alpha="0.35"
+        android:src="@drawable/circle_background_first_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/circle_background_login_screen2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="274dp"
+        android:layout_marginBottom="-289dp"
+        android:alpha="0.35"
+        android:src="@drawable/circle_background_first_screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_cryptodaily_sign_up_screen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_cryptodaily_sign_up_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="500dp"
+        android:fontFamily="@font/sora"
+        android:lineSpacingExtra="3sp"
+        android:text="CryptoDaily"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_acess_your_crypto_login_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/sora"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="3sp"
+        android:text="Access your cryptocurrency news"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_cryptodaily_sign_up_screen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_portal_now_login_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fontFamily="@font/sora"
+        android:gravity="center_horizontal|center_vertical"
+        android:lineSpacingExtra="3sp"
+        android:text="portal now"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_acess_your_crypto_login_screen" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_password_login_screen"
+        style="@style/Theme.CryptoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="7.5dp"
+        android:layout_marginEnd="42dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:lineSpacingExtra="8sp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_login_login_screen" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+
+        android:id="@+id/edit_text_login_login_screen"
+        style="@style/Theme.CryptoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="42dp"
+        android:hint="login"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_portal_now_login_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_button_loginScreen"
+        style="@style/Theme.CryptoButton"
+        android:layout_width="293dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/string_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_password_login_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_sign_up_login_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/sora"
+        android:text="@string/string_sign_up"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button_loginScreen" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/button_back_login_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00000000"
+        android:contentDescription="@string/action_sign_in"
+        android:minHeight="48dp"
+        android:src="@drawable/back_button_create_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

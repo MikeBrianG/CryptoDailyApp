@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="192dp"
+    android:layout_height="132dp"
+    android:layout_marginRight="16dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="24dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="192dp"
+        android:layout_height="132dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginRight="26dp"
+            android:src="@drawable/coin_svgrepo_com"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_name_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Namecoin"
+            android:textColor="@color/dark_blue_text_crypto_bank"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_acronym_coin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="SiglaCoin"
+            android:textColor="@color/text_view_acronyms_grey_color"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/text_view_name_coin"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name_coin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_price_coin"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginRight="-19dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="22dp"
+            android:fontFamily="@font/poppins_medium"
+            android:singleLine="true"
+            android:text="1,000,00"
+            android:textColor="@color/dark_blue_text_crypto_bank"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name_coin" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginTop="20dp"
+            android:background="#0000"
+            android:fontFamily="@font/poppins"
+            android:text="See more"
+            android:textAllCaps="false"
+            android:textColor="@color/blueBackgroundApp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_price_coin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

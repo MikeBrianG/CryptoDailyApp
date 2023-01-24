@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueBackgroundApp"
+    tools:context=".Presentation.login.SignUpScreenFragment">
+
+
+    <ImageButton
+        android:id="@+id/button_back_sign_up_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00000000"
+        android:src="@drawable/back_button_create_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_circle_sign_up_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-236dp"
+        android:alpha="0.35"
+        android:src="@drawable/circle_background_first_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_circle_sign_up_screen2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="274dp"
+        android:layout_marginBottom="-289dp"
+        android:alpha="0.35"
+        android:src="@drawable/circle_background_first_screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_circle_sign_up_screen" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_cryptodaily_sign_up_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="564dp"
+        android:fontFamily="@font/sora"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="3sp"
+        android:text="CryptoDaily"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_register_now_sign_up_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/sora"
+        android:lineSpacingExtra="3sp"
+        android:text="Register now and get access to the best crypto news portal in the world!"
+        android:textAlignment="center"
+        android:textColor="#CCFFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_cryptodaily_sign_up_screen" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_login_sign_up_screen"
+        style="@style/Theme.CryptoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="42dp"
+        android:hint="Login"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_register_now_sign_up_screen"
+        tools:layout_editor_absoluteY="227dp"
+        tools:visibility="visible" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_email_sign_up_screen"
+        style="@style/Theme.CryptoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="42dp"
+        android:hint="E-mail"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_login_sign_up_screen"
+        tools:visibility="visible" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_password_confirm_sign_up_screen"
+        style="@style/Theme.CryptoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="42dp"
+        android:hint="Password"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_email_sign_up_screen"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_text_confirm_password_sign_up_screen"
+        style="@style/Theme.CryptoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="42dp"
+        android:hint="Confirm password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_password_confirm_sign_up_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_create_account_sign_up_screen"
+        style="@style/Theme.CryptoButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="42dp"
+        android:text="@string/create_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_confirm_password_sign_up_screen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_alredy_registered_sign_up_screen"
+        style="@style/Theme.CryptoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/sora"
+        android:text="@string/alredy_registered_click_here"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_create_account_sign_up_screen" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

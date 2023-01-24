@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragments_navigation"
+    app:startDestination="@id/firstScreenFragment">
+
+    <fragment
+        android:id="@+id/loginScreenFragment"
+        android:name="com.example.Presentation.login.LoginScreenFragment"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreenFragment_to_createAccountScreenFragment"
+            app:destination="@id/createAccountScreenFragment" />
+        <action
+            android:id="@+id/action_loginScreenFragment_to_firstScreenFragment"
+            app:destination="@id/firstScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountScreenFragment"
+        android:name="com.example.Presentation.login.SignUpScreenFragment"
+        android:label="fragment_create_account_screen"
+        tools:layout="@layout/fragment_create_account_screen" >
+        <action
+            android:id="@+id/action_createAccountScreenFragment_to_loginScreenFragment3"
+            app:destination="@id/loginScreenFragment" />
+        <action
+            android:id="@+id/action_createAccountScreenFragment_to_firstScreenFragment"
+            app:destination="@id/firstScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstScreenFragment"
+        android:name="com.example.Presentation.login.AccessScreenFragment"
+        android:label="fragment_first_screen"
+        tools:layout="@layout/fragment_access_screen" >
+        <action
+            android:id="@+id/action_firstScreenFragment_to_createAccountScreenFragment"
+            app:destination="@id/createAccountScreenFragment" />
+        <action
+            android:id="@+id/action_firstScreenFragment_to_loginScreenFragment"
+            app:destination="@id/loginScreenFragment" />
+    </fragment>
+</navigation>
