@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_access_screen" />
     <fragment
         android:id="@+id/coinDetails"
-        android:name="com.example.CoinDetails"
+        android:name="com.example.Presentation.details.CoinDetailsFragment"
         android:label="fragment_coin_details"
         tools:layout="@layout/fragment_coin_details" >
         <action

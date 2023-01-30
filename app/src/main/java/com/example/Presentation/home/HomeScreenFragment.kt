@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.Presentation.home.adapter.ClickAction
 import com.example.Presentation.home.adapter.CryptoHorizontalAdapter
 import com.example.Presentation.home.adapter.CryptoVerticalAdapter
 import com.example.R
@@ -17,14 +18,13 @@ import com.example.model.CryptoCoin
 import com.example.model.coins
 
 
-class HomeScreenFragment : Fragment() {
-
+class HomeScreenFragment() : Fragment() {
     private lateinit var binding: FragmentHomeScreenBinding
     private lateinit var dialog: AlertDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
         }
     }
 
@@ -38,8 +38,6 @@ class HomeScreenFragment : Fragment() {
         setListeners()
 
         return binding.root
-
-
     }
 
     private fun setupHorizontalRecycler() {
@@ -47,16 +45,18 @@ class HomeScreenFragment : Fragment() {
         val adapter = CryptoHorizontalAdapter()
         adapter.submitList(coins.sortedByDescending { it.priceCoin })
         recyclerHorizontalCryptoCoin.adapter = adapter
-
     }
-
 
     private fun setupVerticalRecycler(cryptoCoinList: MutableList<CryptoCoin>) {
         val recyclerVerticalCryptoCoin = binding.recyclerViewVerticalList
         val adapter = CryptoVerticalAdapter(cryptoCoinList)
         recyclerVerticalCryptoCoin.adapter = adapter
         recyclerVerticalCryptoCoin.layoutManager = LinearLayoutManager(context)
-
+        adapter.implementationCardView = object : ClickAction {
+            override fun clickItemListListener(coin: CryptoCoin) {
+                findNavController().navigate(R.id.action_fragment_Home_Screen_to_coinDetails)
+            }
+        }
     }
 
     private fun myFavoriteList(cryptoCoinList: MutableList<CryptoCoin>) {
@@ -72,7 +72,7 @@ class HomeScreenFragment : Fragment() {
             recyclerViewHorizontalList.visibility = View.GONE
             textViewCryptocoinsListHomeScreen.text = "Favorites"
             textViewOnlyFavoritesBottomBar.setTextColor(
-                textViewOnlyFavoritesBottomBar.getContext().getColor(R.color.white)
+                textViewOnlyFavoritesBottomBar.context.getColor(R.color.white)
             )
             textViewAllBottomBar.setTextColor(
                 textViewAllBottomBar.context.getColor(R.color.white_50)
@@ -92,12 +92,11 @@ class HomeScreenFragment : Fragment() {
             textViewAllBottomBar.setTextColor(
                 textViewAllBottomBar.context.getColor(R.color.white)
             )
-
         }
     }
 
-
     private fun setListeners() {
+
         binding.run {
             buttonExitHomeScreen.setOnClickListener {
                 showAlertDialog()
@@ -110,10 +109,8 @@ class HomeScreenFragment : Fragment() {
                 myFavoriteList(setFavoriteFilter())
                 setupFavoriteView()
             }
-
         }
     }
-
 
     private fun setFavoriteFilter(): MutableList<CryptoCoin> {
         return coins.filter { it.favoriteSelected } as MutableList<CryptoCoin>
@@ -133,10 +130,13 @@ class HomeScreenFragment : Fragment() {
             findNavController().navigate(R.id.action_fragment_Home_Screen_to_initialScreenFragment)
             dialog.dismiss()
             activity!!.finish()
-
         }
         dialog = builder.create()
         dialog.show()
     }
-
 }
+
+
+
+
+

@@ -33,8 +33,10 @@
         android:id="@+id/text_easy_way_title_initial_screen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/sora_bold"
+        android:gravity="center"
         android:text="@string/easy_way_to_track_your_crypto"
         android:textColor="@color/white"
         android:textSize="28sp"
@@ -45,15 +47,19 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_now_you_can_description_initial_screen"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/sora"
+        android:layout_marginStart="8dp"
+        android:gravity="center_horizontal"
         android:text="@string/now_you_can_follow_and_receive_the_main_updates_about_the_world_of_cryptos"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/text_easy_way_title_initial_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_easy_way_title_initial_screen" />
 
     <androidx.appcompat.widget.AppCompatButton

@@ -2,6 +2,7 @@ package com.example.Presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.R
 import com.example.databinding.CryptoRecyclerVerticalItemBinding
@@ -13,7 +14,7 @@ class CryptoVerticalViewHolder(private val binding: CryptoRecyclerVerticalItemBi
     var listener: CryptoVerticalAdapterClickListener? = null
 
     fun bind(cryptoCoin: CryptoCoin) = with(binding) {
-        clickFavoriteButton()
+        setupListener()
         textViewNameCoin.text = cryptoCoin.nameCoin
         textViewAcronymCoin.text = cryptoCoin.acronymCoin
         textViewPriceCoin.text = cryptoCoin.priceCoin.toString()
@@ -27,9 +28,12 @@ class CryptoVerticalViewHolder(private val binding: CryptoRecyclerVerticalItemBi
     }
 
 
-    private fun clickFavoriteButton() {
+    private fun setupListener() {
         binding.imageButtonFavoriteIconEmpty.setOnClickListener {
             listener?.isFavoriteListener()
+        }
+        binding.cardViewVerticalItemRecycler.setOnClickListener {
+            listener?.cardViewClickListener()
         }
     }
 
@@ -45,5 +49,6 @@ class CryptoVerticalViewHolder(private val binding: CryptoRecyclerVerticalItemBi
 
 interface CryptoVerticalAdapterClickListener {
     fun isFavoriteListener()
-
+    fun cardViewClickListener()
 }
+

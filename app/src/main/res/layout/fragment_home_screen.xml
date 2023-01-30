@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Ariana Grande"
+        android:text="Mike Brian"
         android:textColor="@color/dark_blue_text_crypto_bank"
         android:textSize="18sp"
         android:textStyle="bold"
