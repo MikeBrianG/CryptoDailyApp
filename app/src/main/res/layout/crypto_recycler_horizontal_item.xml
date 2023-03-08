@@ -60,12 +60,12 @@
             android:textColor="@color/dark_blue_text_crypto_bank"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_button_see_more"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_name_coin" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton"
+            android:id="@+id/text_view_button_see_more"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
             android:layout_marginTop="20dp"
@@ -73,11 +73,13 @@
             android:fontFamily="@font/poppins"
             android:text="See more"
             android:textAllCaps="false"
+            android:clickable="true"
             android:textColor="@color/blueBackgroundApp"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@+id/text_view_price_coin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+            android:focusable="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

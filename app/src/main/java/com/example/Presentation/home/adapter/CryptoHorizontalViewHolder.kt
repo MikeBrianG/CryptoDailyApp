@@ -4,15 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.databinding.CryptoRecyclerHorizontalItemBinding
+
 import com.example.model.CryptoCoin
 
 class CryptoHorizontalViewHolder(private val binding: CryptoRecyclerHorizontalItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(cryptoCoinInfo: CryptoCoin) = with(binding) {
-        textViewNameCoin.text = cryptoCoinInfo.nameCoin
-        textViewAcronymCoin.text = cryptoCoinInfo.acronymCoin
-        textViewPriceCoin.text = cryptoCoinInfo.priceCoin.toString()
+        textViewNameCoin.text = cryptoCoinInfo.name
+        textViewAcronymCoin.text = cryptoCoinInfo.symbol
+        textViewPriceCoin.text = cryptoCoinInfo.currentPrice
     }
 
     companion object {

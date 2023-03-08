@@ -6,6 +6,9 @@ import com.example.databinding.ActivityFirstScreenBinding
 
 
 class InitialCryptoBankActivity : AppCompatActivity() {
+    companion object {
+        const val BASE_URL = "https://coingecko.com/api/v3/"
+    }
 
     private lateinit var binding: ActivityFirstScreenBinding
 

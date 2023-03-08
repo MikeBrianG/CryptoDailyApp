@@ -5,37 +5,42 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.model.CryptoCoin
 
 
+
 class CryptoVerticalAdapter(
-    private val cryptoCoinList: MutableList<CryptoCoin>
+    private val cryptoCoinList: List<CryptoCoin>?
 ) :
     RecyclerView.Adapter<CryptoVerticalViewHolder>() {
 
     var implementationCardView: ClickAction? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptoVerticalViewHolder {
-
         return CryptoVerticalViewHolder.create(parent)
     }
 
 
     override fun onBindViewHolder(holder: CryptoVerticalViewHolder, position: Int) {
-        val coin = cryptoCoinList[position]
-
-        holder.bind(coin)
+        val coin = cryptoCoinList?.get(position)
+        if (coin != null) {
+            holder.bind(coin)
+        }
         holder.listener = object : CryptoVerticalAdapterClickListener {
             override fun isFavoriteListener() {
-                coin.favoriteSelected = !coin.favoriteSelected
+                if (coin != null) {
+                    coin.favorite = !coin.favorite
+                }
                 notifyItemChanged(holder.adapterPosition)
             }
 
             override fun cardViewClickListener() {
 
-                implementationCardView?.clickItemListListener(coin)
+                if (coin != null) {
+                    implementationCardView?.clickItemListListener(coin)
+                }
             }
         }
     }
 
-    override fun getItemCount(): Int = cryptoCoinList.size
+    override fun getItemCount(): Int = cryptoCoinList!!.size
 }
 
 interface ClickAction {
