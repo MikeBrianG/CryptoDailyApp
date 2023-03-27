@@ -16,6 +16,10 @@
         <action
             android:id="@+id/action_fragment_Home_Screen_to_coinDetails"
             app:destination="@id/coinDetails" />
+        <argument
+            android:name="cryptoCoinId"
+            app:argType="string"
+            />
     </fragment>
     <fragment
         android:id="@+id/initialScreenFragment"
@@ -29,6 +33,16 @@
         tools:layout="@layout/fragment_coin_details" >
         <action
             android:id="@+id/action_coinDetails_to_fragment_Home_Screen"
-            app:destination="@id/fragment_Home_Screen" />
+            app:destination="@id/fragment_Home_Screen"
+            >
+            <argument
+                android:name="id"
+                app:argType="string"
+                />
+        </action>
+        <argument
+            android:name="coinId"
+            app:argType="string" />
+
     </fragment>
 </navigation>

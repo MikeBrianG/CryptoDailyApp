@@ -1,5 +1,6 @@
 package com.example.Presentation.home.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,10 +11,11 @@ import com.example.model.CryptoCoin
 class CryptoHorizontalViewHolder(private val binding: CryptoRecyclerHorizontalItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
+    @SuppressLint("SetTextI18n")
     fun bind(cryptoCoinInfo: CryptoCoin) = with(binding) {
         textViewNameCoin.text = cryptoCoinInfo.name
         textViewAcronymCoin.text = cryptoCoinInfo.symbol
-        textViewPriceCoin.text = cryptoCoinInfo.currentPrice
+        textViewPriceCoin.text = cryptoCoinInfo.currentPrice + " $"
     }
 
     companion object {

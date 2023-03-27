@@ -1,5 +1,6 @@
 package com.example.Presentation.home.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,11 +13,13 @@ class CryptoVerticalViewHolder(private val binding: CryptoRecyclerVerticalItemBi
 
     var listener: CryptoVerticalAdapterClickListener? = null
 
+
+    @SuppressLint("SetTextI18n")
     fun bind(cryptoCoin: CryptoCoin) = with(binding) {
         setupListener()
         textViewNameCoin.text = cryptoCoin.name
         textViewAcronymCoin.text = cryptoCoin.symbol
-        textViewPriceCoin.text = cryptoCoin.currentPrice
+        textViewPriceCoin.text = cryptoCoin.currentPrice + " $"
         binding.imageButtonFavoriteIconEmpty.setBackgroundResource(setupBackground(cryptoCoin))
     }
 
@@ -25,10 +28,6 @@ class CryptoVerticalViewHolder(private val binding: CryptoRecyclerVerticalItemBi
     } else {
         R.drawable.empty_favorite_icon_vector
     }
-private fun convertPriceToUIModel(coin: CryptoCoin){
-    val currentPrice = "$ ${coin.currentPrice}"
-
-}
 
     private fun setupListener() {
         binding.imageButtonFavoriteIconEmpty.setOnClickListener {

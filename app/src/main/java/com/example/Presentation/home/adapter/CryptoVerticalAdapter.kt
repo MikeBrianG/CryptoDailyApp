@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.model.CryptoCoin
 
 
-
 class CryptoVerticalAdapter(
     private val cryptoCoinList: List<CryptoCoin>?
 ) :

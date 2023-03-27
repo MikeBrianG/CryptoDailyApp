@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/home_color_background"
-    tools:context="com.example.Presentation.details.CoinDetailsFragment"
-    >
+    tools:context="com.example.Presentation.details.CoinDetailsFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_details"
@@ -24,105 +23,161 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
-        android:clickable="true"
         android:background="#0000"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/poppins"
         android:text="@string/back_button_home_screen_string"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_details"
         app:layout_constraintEnd_toEndOf="@+id/toolbar_details"
-        app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_name_coin_id_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:fontFamily="@font/poppins_bold"
+        tools:text="NameCoin"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar_details"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="NameCoin" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/text_view_description_detail_screen"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/dark_blue_text_crypto_bank"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Descricao sobre o bitcoin. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor ligula ac eros malesuada scelerisque. Vivamus tellus ligula, dignissim sit amet enim sed, mattis efficitur tellus. Etiam est libero, mollis vitae purus ac, accumsan congue orci. Cras non justo quis ipsum tempor pulvinar vel ut eros. In fermentum sem magna, sit amet pulvinar lectus rhoncus ut. Cras nec diam scelerisque odio euismod vestibulum. Phasellus feugiat justo vel molestie dapibus. Donec sit amet sem consequat libero porttitor tincidunt. Etiam volutpat consequat convallis. Nulla arcu dui, fermentum ac elementum quis, vestibulum vitae lectus. Vestibulum efficitur vehicula mi, eu vulputate dolor sollicitudin non. Vestibulum ullamcorper pharetra pulvinar. Nulla ultrices, dui sed interdum lacinia, ante nibh porta justo, quis mollis erat odio in mauris."
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view_description"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_details" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_details">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins"
-        android:text="Tags"
-        android:textColor="@color/dark_blue_text_crypto_bank"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_description_detail_screen" />
+        <TextView
+            android:id="@+id/text_view_description_detail_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins"
+            tools:text="@string/descricao_sobre_o_bitcoin_lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_aliquam_tempor_ligula_ac_eros_malesuada_scelerisque_vivamus_tellus_ligula_dignissim_sit_amet_enim_sed_mattis_efficitur_tellus_etiam_est_libero_mollis_vitae_purus_ac_accumsan_congue_orci_cras_non_justo_quis_ipsum_tempor_pulvinar_vel_ut_eros_in_fermentum_sem_magna_sit_amet_pulvinar_lectus_rhoncus_ut_cras_nec_diam_scelerisque_odio_euismod_vestibulum_phasellus_feugiat_justo_vel_molestie_dapibus_donec_sit_amet_sem_consequat_libero_porttitor_tincidunt_etiam_volutpat_consequat_convallis_nulla_arcu_dui_fermentum_ac_elementum_quis_vestibulum_vitae_lectus_vestibulum_efficitur_vehicula_mi_eu_vulputate_dolor_sollicitudin_non_vestibulum_ullamcorper_pharetra_pulvinar_nulla_ultrices_dui_sed_interdum_lacinia_ante_nibh_porta_justo_quis_mollis_erat_odio_in_mauris"
+            android:textColor="@color/dark_blue_text_crypto_bank"
+            android:textSize="14sp" />
+    </androidx.core.widget.NestedScrollView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_tags_details_screen"
-        android:layout_width="0dp"
+    <HorizontalScrollView
+        android:id="@+id/scroll_view_container_chip_group"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:listitem="@layout/tag_details_screen_recycler_item" />
+        app:layout_constraintTop_toBottomOf="@id/scroll_view_description">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_group_button1_usd"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:checked="true"
+                android:text="USD"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_group_button2_eur"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="EUR"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_group_button3_brl"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="BRL"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_group_button4_btc"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="BTC"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_group_button5_eth"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="ETH"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_group_button6_jpy"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:layout_marginEnd="24dp"
+                android:text="JPY"
+                android:textAlignment="center"
+                android:textSize="10dp"
+                android:theme="@style/Widget.Material3.Chip.Suggestion" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView2"
+        android:id="@+id/text_view_current_price_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/text_view_team_details_screen"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/text_view_current_price_details_screen"
         android:textColor="@color/dark_blue_text_crypto_bank"
-        android:textSize="18sp"
+        android:textSize="21sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_view_tags_details_screen" />
+        app:layout_constraintTop_toBottomOf="@+id/scroll_view_container_chip_group" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_team_details"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_current_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:fontFamily="@font/poppins_thin"
+        android:fontFamily="@font/poppins_thin"
+        android:textColor="@color/dark_blue_text_crypto_bank"
+        android:textSize="58dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/team_details_screen_item" />
+        app:layout_constraintTop_toBottomOf="@id/text_view_current_price_tittle"
+        tools:text="2500.00 usd"
 
-
-
-
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,29 +14,29 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_name_team_details_screen"
+            android:id="@+id/text_view_name_coin_current_details_screen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/poppins"
-            android:text="Satoshi Nakamoto"
+            android:text="USD"
             android:textColor="@color/dark_blue_text_crypto_bank"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_view_function_team_detail_screen"
+            android:id="@+id/text_view_price_current_detail_screen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins"
-            android:text="Founder"
+            android:text="2555050"
             android:textColor="@color/greyHintEditText"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/text_view_name_team_details_screen"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_name_team_details_screen" />
+            app:layout_constraintStart_toStartOf="@+id/text_view_name_coin_current_details_screen"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_name_coin_current_details_screen" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
@@ -46,8 +46,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="@id/text_view_function_team_detail_screen"
-            app:layout_constraintTop_toBottomOf="@id/text_view_function_team_detail_screen" />
+            app:layout_constraintStart_toStartOf="@id/text_view_price_current_detail_screen"
+            app:layout_constraintTop_toBottomOf="@id/text_view_price_current_detail_screen" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -24,17 +24,17 @@ class SignUpScreenFragment : Fragment() {
     ): View {
 
         binding = FragmentCreateAccountScreenBinding.inflate(layoutInflater, container, false)
-        setListeners()
+        setupListeners()
 
         return binding.root
     }
 
-    private fun setListeners() {
+    private fun setupListeners() {
         binding.run {
             buttonCreateAccountSignUpScreen.setOnClickListener {
                 navigateScreen(R.id.action_createAccountScreenFragment_to_loginScreenFragment3)
             }
-            buttonAlredyRegisteredSignUpScreen.setOnClickListener {
+            buttonAlreadyRegisteredSignUpScreen.setOnClickListener {
                 navigateScreen(R.id.action_createAccountScreenFragment_to_loginScreenFragment3)
             }
             buttonBackSignUpScreen.setOnClickListener {

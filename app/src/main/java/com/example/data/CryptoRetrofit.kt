@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class CryptoHomeRetrofit {
+class CryptoRetrofit {
 
     companion object {
         fun getCryptoRetrofit(): Retrofit {

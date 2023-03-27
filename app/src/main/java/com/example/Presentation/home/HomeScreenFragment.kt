@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatButton
-import androidx.core.os.bundleOf
-import androidx.core.os.persistableBundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import androidx.navigation.fragment.findNavController
@@ -18,7 +16,7 @@ import com.example.Presentation.home.adapter.ClickAction
 import com.example.Presentation.home.adapter.CryptoHorizontalAdapter
 import com.example.Presentation.home.adapter.CryptoVerticalAdapter
 import com.example.R
-import com.example.data.CryptoHomeRetrofit
+import com.example.data.CryptoRetrofit
 import com.example.data.service.CryptoHomeService
 import com.example.databinding.FragmentHomeScreenBinding
 import com.example.model.CryptoCoin
@@ -27,19 +25,17 @@ import kotlin.concurrent.thread
 
 
 class HomeScreenFragment() : Fragment() {
-    companion object {
-        const val BASE_URL = "https://coingecko.com/api/v3/"
-    }
 
     private lateinit var binding: FragmentHomeScreenBinding
     private lateinit var dialog: AlertDialog
     private lateinit var coin: CryptoCoin
-    private var myCryptoList: List<CryptoCoin>? = listOf()
-
+    private var myCryptoList = mutableListOf<CryptoCoin>()
+    private lateinit var cryptoHomeList: List<CryptoCoin>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
+        getCryptoCoinList()
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -49,14 +45,9 @@ class HomeScreenFragment() : Fragment() {
     ): View {
 
         binding = FragmentHomeScreenBinding.inflate(layoutInflater, container, false)
-        if (myCryptoList?.size!! > 0 && !myCryptoList.isNullOrEmpty()) {
-            setupHorizontalRecycler(myCryptoList)
-            setupVerticalRecycler(myCryptoList)
-        }
+        setupView()
 
-        getCryptoCoinList()
         setupListeners()
-
 
         return binding.root
     }
@@ -66,6 +57,7 @@ class HomeScreenFragment() : Fragment() {
         val adapter = CryptoHorizontalAdapter(cryptoCoinList)
         recyclerHorizontalCryptoCoin.adapter = adapter
     }
+
     private fun setupVerticalRecycler(cryptoCoinList: List<CryptoCoin>?) {
         val recyclerVerticalCryptoCoin = binding.recyclerViewVerticalList
         val adapter = CryptoVerticalAdapter(cryptoCoinList)
@@ -74,18 +66,33 @@ class HomeScreenFragment() : Fragment() {
         adapter.implementationCardView = object : ClickAction {
 
             override fun clickItemListListener(coin: CryptoCoin) {
-                findNavController().navigate(R.id.action_fragment_Home_Screen_to_coinDetails)
+                val action = HomeScreenFragmentDirections
+                    .actionFragmentHomeScreenToCoinDetails(coin.id)
+                findNavController().navigate(action)
             }
         }
     }
+
+    private fun setupView() {
+        lifecycleScope.launch {
+            if (!myCryptoList.isNullOrEmpty()) {
+                cryptoHomeList = myCryptoList
+                setupHorizontalRecycler(cryptoHomeList)
+                setupVerticalRecycler(cryptoHomeList)
+            }
+        }
+    }
+
     private fun getCryptoCoinList() {
         lifecycleScope.launch {
-            val retrofit = CryptoHomeRetrofit.getCryptoRetrofit()
-            myCryptoList = retrofit.create(CryptoHomeService::class.java)
+            val retrofit = CryptoRetrofit.getCryptoRetrofit()
+            val coinList = retrofit.create(CryptoHomeService::class.java)
                 .getCryptoCoin()
-                .body()
+                .body()!!
+            myCryptoList.addAll(coinList)
             setupHorizontalRecycler(myCryptoList)
             setupVerticalRecycler(myCryptoList)
+
         }
     }
 
@@ -94,6 +101,7 @@ class HomeScreenFragment() : Fragment() {
         val favoriteList = cryptoCoinList?.filter { it.favorite }
         setupVerticalRecycler(favoriteList)
     }
+
     @RequiresApi(Build.VERSION_CODES.M)
     private fun setupFavoriteView() {
         binding.run {
@@ -143,9 +151,11 @@ class HomeScreenFragment() : Fragment() {
             }
         }
     }
+
     private fun setFavoriteFilter(): List<CryptoCoin>? {
         return myCryptoList?.filter { it.favorite }
     }
+
     private fun showAlertDialog() {
         val builder = AlertDialog.Builder(context, R.style.Theme_CryptoAlertDialog)
         val view = layoutInflater.inflate(R.layout.alert_dialog_exit, null)
@@ -158,7 +168,7 @@ class HomeScreenFragment() : Fragment() {
         exitButton.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_Home_Screen_to_initialScreenFragment)
             dialog.dismiss()
-            activity!!.finish()
+            activity?.finish()
         }
         dialog = builder.create()
         dialog.show()
